@@ -38,3 +38,126 @@ Started GET "/" for ::1 at 2015-11-18 13:37:10 -0600
 Processing by Rails::WelcomeController#index as HTML
   Rendered /Users/admin/.rvm/gems/ruby-2.1.2/gems/railties-4.2.3/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
 Completed 200 OK in 1ms (Views: 0.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2016-12-22 11:53:37 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/railties-4.2.3/lib/rails/templates/rails/welcome/index.html.erb (1.7ms)
+Completed 200 OK in 18ms (Views: 10.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/students" for ::1 at 2016-12-22 11:53:40 -0500
+Processing by StudentsController#index as HTML
+  Rendered students/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 963ms (Views: 962.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-12-22 11:53:41 -0500
+
+
+Started GET "/assets/students.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2016-12-22 11:53:41 -0500
+
+
+Started GET "/assets/students.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2016-12-22 11:53:41 -0500
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2016-12-22 11:53:41 -0500
+
+
+Started GET "/students" for ::1 at 2016-12-22 11:55:38 -0500
+Processing by StudentsController#index as HTML
+  [1m[35mStudent Load (0.3ms)[0m  SELECT "students".* FROM "students"
+  Rendered students/index.html.erb within layouts/application (20.2ms)
+Completed 500 Internal Server Error in 27ms (ActiveRecord: 0.5ms)
+
+ActionView::Template::Error (undefined method `+' for nil:NilClass):
+     6:   </head>
+     7:   <body>
+     8:     <% @students.each do |student| %>
+     9:       <p><%=student%></p>
+    10:     <% end %>
+    11:   </body>
+    12: </html>
+  app/models/student.rb:3:in `to_s'
+  app/views/students/index.html.erb:9:in `block in _app_views_students_index_html_erb___544588967470747749_70357110609260'
+  app/views/students/index.html.erb:8:in `_app_views_students_index_html_erb___544588967470747749_70357110609260'
+
+
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.7ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.3ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (58.4ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (43.1ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (98.5ms)
+
+
+Started GET "/students" for ::1 at 2016-12-22 11:56:03 -0500
+Processing by StudentsController#index as HTML
+  Rendered students/index.html.erb within layouts/application (4.3ms)
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `pry' for #<Binding:0x007ffa97b22a20>
+Did you mean?  try):
+     5:     <title>Students</title>
+     6:   </head>
+     7:   <body>
+     8:     <% binding.pry %>
+     9:     <% @students.each do |student| %>
+    10:       <p><%=student%></p>
+    11:     <% end %>
+  app/views/students/index.html.erb:8:in `_app_views_students_index_html_erb___544588967470747749_70357131872800'
+
+
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.8ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (50.3ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (42.3ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (89.1ms)
+
+
+Started GET "/students" for ::1 at 2016-12-22 11:56:28 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StudentsController#index as HTML
+  [1m[35mStudent Load (0.2ms)[0m  SELECT "students".* FROM "students"
+  Rendered students/index.html.erb within layouts/application (22037.2ms)
+Completed 500 Internal Server Error in 22053ms (ActiveRecord: 0.4ms)
+
+ActionView::Template::Error (undefined method `+' for nil:NilClass):
+     7:   <body>
+     8:     <% binding.pry %>
+     9:     <% @students.each do |student| %>
+    10:       <p><%=student%></p>
+    11:     <% end %>
+    12:   </body>
+    13: </html>
+  app/models/student.rb:3:in `to_s'
+  app/views/students/index.html.erb:10:in `block in _app_views_students_index_html_erb__1045448324938964646_70318398993020'
+  app/views/students/index.html.erb:9:in `_app_views_students_index_html_erb__1045448324938964646_70318398993020'
+
+
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.8ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.3/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (49.9ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (1.4ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (45.6ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.2ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/flatironschool/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (102.0ms)
